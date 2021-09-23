@@ -5,6 +5,10 @@ Fork of https://github.com/w3guy/persist-admin-notices-dismissal
 
 ## Instuctions
 
+Initialize the class.
+
+`new \WP_Dismiss_Notice();` in your project.
+
 Admin notice format.
 
  You must add `dependency-installer` to the admin notice class as well as `data-dismissible='dependency-installer-<plugin basename>-<timeout>'`
