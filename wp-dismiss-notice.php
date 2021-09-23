@@ -38,9 +38,9 @@ class WP_Dismiss_Notice {
 
 		wp_localize_script(
 			'dismissible-notices',
-			'dismissible_notice',
+			'wp_dismiss_notice',
 			[
-				'nonce'   => wp_create_nonce( 'dismissible-notice' ),
+				'nonce'   => wp_create_nonce( 'wp-dismiss-notice' ),
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			]
 		);
@@ -60,7 +60,7 @@ class WP_Dismiss_Notice {
 			$dismissible_length = strtotime( absint( $dismissible_length ) . ' days' );
 		}
 
-		check_ajax_referer( 'dismissible-notice', 'nonce' );
+		check_ajax_referer( 'wp-dismiss-notice', 'nonce' );
 		self::set_admin_notice_cache( $option_name, $dismissible_length );
 		wp_die();
 	}

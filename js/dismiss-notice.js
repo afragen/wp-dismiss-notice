@@ -26,11 +26,11 @@
 						'action': 'dismiss_admin_notice',
 						'option_name': option_name,
 						'dismissible_length': dismissible_length,
-						'nonce': window.dismissible_notice.nonce
+						'nonce': window.wp_dismiss_notice.nonce
 					};
 
 					// Run Ajax request.
-					$.post(window.dismissible_notice.ajaxurl, data);
+					$.post(window.wp_dismiss_notice.ajaxurl, data);
 					$this.closest('div[data-dismissible]').hide('slow');
 				}
 			);
