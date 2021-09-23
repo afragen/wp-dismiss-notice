@@ -30,7 +30,7 @@ class WP_Dismiss_Notice {
 
 		wp_enqueue_script(
 			'dismissible-notices',
-			plugins_url( 'js/dismiss-notice.js', __DIR__ ),
+			plugins_url( 'js/dismiss-notice.js', __FILE__ ),
 			[ 'jquery', 'common' ],
 			false,
 			true
