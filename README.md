@@ -96,7 +96,7 @@ Example of creating admin notice from afragen/wp-dependency-installer
 					esc_attr( $dismissible ),
 					esc_html( $label ),
 					esc_html( $message ),
-					$action // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$action
 				);
 			}
 		}
