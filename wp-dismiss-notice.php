@@ -28,9 +28,16 @@ class WP_Dismiss_Notice {
 			return;
 		}
 
+		$theme_dir_uri = dirname( get_template_directory_uri() );
+		$plugin_js_url = plugins_url( 'js/dismiss-notice.js', __FILE__, 'wp-dismiss-notice' );
+
+		$js_url = 200 === wp_remote_retrieve_response_code( wp_remote_head( $plugin_js_url ) )
+			? $plugin_js_url
+			: str_replace( plugins_url(), $theme_dir_uri, $plugin_js_url );
+
 		wp_enqueue_script(
 			'dismissible-notices',
-			plugins_url( 'js/dismiss-notice.js', __FILE__ ),
+			$js_url,
 			[ 'jquery', 'common' ],
 			false,
 			true
